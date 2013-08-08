@@ -1,13 +1,12 @@
 Propel Logger Bundle
 =========
 
-Extended Propel Logger Bundle for Symfony 2 PHP Framework.
 This logger show you full queries stacktraces and duplicate queries.
 
 ## Prerequisites
 
 This version of the bundle requires Symfony => 2.2.x.
-If you use Symfony < 2.3.x, please switch the to branch "2.1".
+If you use Symfony <= 2.1.x, please switch the to branch "2.1".
 
 ## Installation
 
@@ -48,8 +47,8 @@ public function registerBundles()
 
 ### Step 3: Configure your project
 
-Configure the logger, you must provider your application namespace (only the organisation, like "Acme").
-You can provide an array, and regex.
+Configure the logger, you must provide your application namespace (only the organisation, like "Acme").
+You can provide an array, and/or regex.
 Warning: if you provide a fully namespace, like "Foo\Bar", please double the backslash : it's a regex.
 
 ``` yaml
@@ -60,9 +59,7 @@ divi_propel_logger:
 
 ## How to use
 
-### Examples
-
-Now, in the Symfony web debug toolbar, you'll have a red circle if you have a duplicate queries. If you want to see the stacktrace, open the Propel profiler, and click on "Explain the query" on the selected query.
+Now, in the Symfony web debug toolbar, you'll have a red circle if you have a duplicate query. If you want to see the stacktrace, open the Propel profiler, and click on "Explain the query" on the selected query.
 
 ## Issue or new feature ?
 
