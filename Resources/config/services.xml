@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+		<parameter key="propel.logger.class">Divi\PropelLoggerBundle\Logger\PropelLogger</parameter>
+		<parameter key="propel.data_collector.class">Divi\PropelLoggerBundle\DataCollector\PropelDataCollector</parameter>
+    </parameters>
+
+    <services>
+        <service id="propel.logger" class="%propel.logger.class%">
+            <tag name="monolog.logger" channel="propel" />
+            <argument type="service" id="logger" on-invalid="null" />
+            <argument type="service" id="debug.stopwatch" on-invalid="null" />
+            <argument>%divi_propel_logger.namespaces%</argument>
+        </service>
+    </services>
+</container>

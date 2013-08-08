@@ -1,0 +1,22 @@
+{
+    "name": "divi/propel-logger-bundle",
+    "type": "symfony-bundle",
+    "description": "Extended Propel Logger Bundle for Symfony 2 PHP Framework",
+    "keywords": ["Propel", "Logger", "Symfony", "Optimization", "SQL"],
+    "homepage": "https://github.com/Divi/PropelLoggerBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sylvain Lorinet",
+            "email": "sylvain.lorinet@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "propel/propel-bundle": "1.2.*@dev"
+    },
+    "autoload": {
+        "psr-0": { "Divi\\PropelLoggerBundle": "" }
+    },
+    "target-dir": "Divi/PropelLoggerBundle"
+}
