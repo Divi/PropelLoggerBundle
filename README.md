@@ -5,8 +5,7 @@ This logger show you full queries stacktraces and duplicate queries.
 
 ## Prerequisites
 
-This version of the bundle requires Symfony => 2.2.x.
-If you use Symfony <= 2.1.x, please switch the to branch "2.1".
+This version of the bundle requires Symfony => 2.2.x. If you use Symfony <= 2.1.x, please switch the to branch "2.1".
 
 ## Installation
 
