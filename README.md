@@ -46,8 +46,7 @@ public function registerBundles()
 
 ### Step 3: Configure your project
 
-Configure the logger, you must provide your application namespace (only the organisation, like "Acme").
-You can provide an array, and/or regex.
+Configure the logger, you must provide your application namespace (only the organisation, like "Acme"). You can provide an array, and/or regex.
 Warning: if you provide a fully namespace, like "Foo\Bar", please double the backslash : it's a regex.
 
 ``` yaml
