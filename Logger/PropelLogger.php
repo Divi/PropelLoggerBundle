@@ -82,7 +82,7 @@ class PropelLogger extends BasePropelLogger
                 if (!isset($line['class'])) {
                     continue;
                 }
-                // Keeping only file with "BNS" namespace
+                // Keeping only file with provided namespaces
                 else if (preg_match('#' . $this->namespaces . '#', $line['class'])) {
                     $i = count($cleanedTrace);
                     $cleanedTrace[$i]['file']     = isset($line['file']) ? $line['file'] : $trace[$j-1]['file'];
