@@ -59,6 +59,10 @@ divi_propel_logger:
 
 Now, in the Symfony web debug toolbar, you'll have a red circle if you have a duplicate query. If you want to see the stacktrace, open the Propel profiler, and click on "Explain the query" on the selected query.
 
+## TODO
+
+Implement the new BasicLogger, according to this commit : https://github.com/symfony/symfony/commit/50435aad806940cebaa5d6cba03f6824e69b4083
+
 ## Issue or new feature ?
 
 Feel free to post your issue or feature request in the [issue tracker](https://github.com/Divi/PropelLoggerBundle/issues) !
