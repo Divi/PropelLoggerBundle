@@ -8,28 +8,12 @@
         {% endfor %}
     </tr>
     {% for row in data %}
-		<tr>
-			{% for item in row %}
-				<td>{{ item }}</td>
-			{% endfor %}
-		</tr>
-    {% endfor %}
-</table>
-
-<h2>Stacktrace</h2>
-<table>
-    <tr>
-        <th>Class</th>
-        <th>File</th>
-        <th>Line</th>
-        <th>Method/Function</th>
-    </tr>
-    {% for line in infos['stacktrace'] %}
         <tr>
-            <td>{{ line.class }}</td>
-            <td>{{ line.file }}</td>
-            <td>{{ line.line }}</td>
-            <td>{{ line.function }}</td>
+            {% for item in row %}
+                <td>{{ item }}</td>
+            {% endfor %}
         </tr>
     {% endfor %}
 </table>
+
+{% include 'DiviPropelLoggerBundle:Panel:stacktrace.html.twig' with {'stacktrace': infos['stacktrace']} %}
