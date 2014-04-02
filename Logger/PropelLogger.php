@@ -73,7 +73,7 @@ class PropelLogger extends BasePropelLogger
 
             // Stacktrace process
             if (!isset($trace)) {
-                $trace = debug_backtrace();
+                $trace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
             }
 
             $cleanedTrace = array();
@@ -82,13 +82,10 @@ class PropelLogger extends BasePropelLogger
                 if (!isset($line['class'])) {
                     continue;
                 }
+
                 // Keeping only file with provided namespaces
                 else if (preg_match('#' . $this->namespaces . '#', $line['class'])) {
-                    $i = count($cleanedTrace);
-                    $cleanedTrace[$i]['file']     = isset($line['file']) ? $line['file'] : $trace[$j-1]['file'];
-                    $cleanedTrace[$i]['function'] = $line['function'];
-                    $cleanedTrace[$i]['line']     = isset($line['line']) ? $line['line'] : $trace[$j-1]['line'];
-                    $cleanedTrace[$i]['class']    = $line['class'];
+                    $cleanedTrace[] = $line;
                 }
             }
 
