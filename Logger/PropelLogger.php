@@ -77,7 +77,7 @@ class PropelLogger extends BasePropelLogger
             }
 
             $cleanedTrace = array();
-            foreach ($trace as $j => $line) {
+            foreach ($trace as $line) {
                 // Check before condition
                 if (!isset($line['class'])) {
                     continue;
@@ -85,7 +85,9 @@ class PropelLogger extends BasePropelLogger
 
                 // Keeping only file with provided namespaces
                 else if (preg_match('#' . $this->namespaces . '#', $line['class'])) {
-                    $cleanedTrace[] = $line;
+                    if (isset($line['file'])) {
+                        $cleanedTrace[] = $line;
+                    }
                 }
             }
 

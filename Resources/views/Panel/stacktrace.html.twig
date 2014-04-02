@@ -5,13 +5,20 @@
         <th>File</th>
         <th>Line</th>
         <th>Method/Function</th>
+        <th>Code</th>
     </tr>
-    {% for line in stacktrace %}
+    {% for i,trace in stacktrace %}
         <tr>
-            <td>{{ line.class }}</td>
-            <td>{{ line.file }}</td>
-            <td>{{ line.line }}</td>
-            <td>{{ line.function }}</td>
+            <td>{{ trace.class }}</td>
+            <td>{{ trace.file }}</td>
+            <td>{{ trace.line }}</td>
+            <td>{{ trace.function }}</td>
+            <td class="show-code" onclick="this.innerHTML = this.innerHTML == '+' ? '-' : '+'; return document.getElementById('inner-code-{{ i }}').style.display = document.getElementById('inner-code-{{ i }}').style.display == 'table-cell' ? 'none' : 'table-cell';">+</td>
+        </tr>
+        <tr>
+            <td colspan="6" class="inner-code" id="inner-code-{{ i }}">
+                {{ trace.file|file_excerpt(trace.line) }}
+            </td>
         </tr>
     {% endfor %}
 </table>
