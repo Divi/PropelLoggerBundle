@@ -1,7 +1,8 @@
 Propel Logger Bundle
 =========
 
-This logger show you full queries stacktraces and duplicate queries.
+This logger show you full queries stacktraces and duplicate queries.  
+For each stacktrace you can see the inner class/file code.
 
 ## Prerequisites
 
@@ -11,12 +12,12 @@ This version of the bundle requires Symfony `=> 2.2.x`. If you use Symfony `2.1.
 
 ### Step 1: Download PropelLoggerBundle using composer
 
-In your composer.json, add PropelLoggerBundle :
+In your composer.json, add PropelLoggerBundle **(only for dev)** :
 
 ```js
 {
-    "require": {
-        "divi/propel-logger-bundle": "dev-master"
+    "require-dev": {
+        "divi/propel-logger-bundle": "2.2.*@dev"
     }
 }
 ```
@@ -58,6 +59,11 @@ divi_propel_logger:
 ## How to use
 
 Now, in the Symfony web debug toolbar, you'll have a red circle if you have a duplicate query. If you want to see the stacktrace, open the Propel profiler, and click on "Explain the query" on the selected query.
+
+## Test instance
+
+You can have memory leak issue in test instance (unit tests) due to the stacktrace saving process.  
+If an issue appears, just load the bundle only for dev instance in your AppKernel, move the bundle configuration to `config_dev.yml` and in the `config_test.yml`, do not import the `config_dev.yml` file but `config.yml`. Finally, copy and paste the `monolog` configuration section from the dev config to your test config file.
 
 ## Issue or new feature ?
 
