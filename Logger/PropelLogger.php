@@ -51,7 +51,7 @@ class PropelLogger extends BasePropelLogger
         $add = true;
 
         if (null !== $this->stopwatch) {
-            $trace = debug_backtrace();
+            $trace = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 3);
             $method = $trace[2]['args'][2];
 
             $watch = 'Propel Query '.(count($this->queries)+1);
@@ -72,9 +72,7 @@ class PropelLogger extends BasePropelLogger
             }
 
             // Stacktrace process
-            if (!isset($trace)) {
-                $trace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
-            }
+            $trace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
 
             $cleanedTrace = array();
             foreach ($trace as $line) {

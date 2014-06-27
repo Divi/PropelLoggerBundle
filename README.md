@@ -6,7 +6,8 @@ For each stacktrace you can see the inner class/file code.
 
 ## Prerequisites
 
-This version of the bundle requires Symfony `=> 2.2.x`. If you use Symfony `2.1.x`, please switch to the branch `2.1`.
+This version of the bundle requires Symfony `=> 2.2.x`. If you use Symfony `2.1.x`, please switch to the branch `2.1`.  
+If you use PHP 5.3, please switch on the `php5.3` branch.
 
 ## Installation
 
